@@ -1,0 +1,15 @@
+{
+    "name": "picksomeone.stuiterveer",
+    "description": "If you can't decide who does something, this will do it for you",
+    "architecture": "$ENV{ARCH}",
+    "title": "Pick Someone!",
+    "hooks": {
+        "picksomeone": {
+            "apparmor": "picksomeone.apparmor",
+            "desktop":  "picksomeone.desktop"
+        }
+    },
+    "version": "1.0.0",
+    "maintainer": "stuiterveer <admin@stuiterveer.com>",
+    "framework" : "$ENV{CLICK_FRAMEWORK}"
+}
