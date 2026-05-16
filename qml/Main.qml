@@ -36,7 +36,7 @@ MainView {
                         }
                     }
 
-                    selectedFinger = Math.floor(Math.random() * currentlyPressed.length);
+                    selectedFinger = currentlyPressed[Math.floor(Math.random() * currentlyPressed.length)];
                 }
             }
         }
