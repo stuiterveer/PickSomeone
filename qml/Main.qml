@@ -126,7 +126,7 @@ MainView {
             }
 
             onTouchUpdated: {
-                if (touchPoints.length > 0) {
+                if (touchPoints.length > 1) {
                     if (!timer.running) {
                         timer.start();
                     }
