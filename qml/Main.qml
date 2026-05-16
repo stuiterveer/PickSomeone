@@ -28,7 +28,7 @@ MainView {
 
             onTriggered: {
                 fullSeconds++;
-                if (fullSeconds == 10) {
+                if (fullSeconds == 5) {
                     var currentlyPressed = []
                     for (var i = 0; i < touchSurface.touchPoints.length; i++) {
                         if (touchSurface.touchPoints[i].pressed) {
