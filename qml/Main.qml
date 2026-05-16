@@ -36,7 +36,6 @@ MainView {
             ]
 
             Rectangle {
-                id: rect1
                 width: units.gu(13)
                 height: width
                 radius: width/2
@@ -47,7 +46,6 @@ MainView {
             }
 
             Rectangle {
-                id: rect2
                 width: units.gu(13)
                 height: width
                 radius: width/2
@@ -58,7 +56,6 @@ MainView {
             }
 
             Rectangle {
-                id: rect3
                 width: units.gu(13)
                 height: width
                 radius: width/2
@@ -69,7 +66,6 @@ MainView {
             }
 
             Rectangle {
-                id: rect4
                 width: units.gu(13)
                 height: width
                 radius: width/2
@@ -80,7 +76,6 @@ MainView {
             }
 
             Rectangle {
-                id: rect5
                 width: units.gu(13)
                 height: width
                 radius: width/2
