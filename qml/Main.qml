@@ -10,12 +10,35 @@ MainView {
     width: units.gu(45)
     height: units.gu(75)
 
+    property int fullSeconds: 0
+    property int selectedFinger: 0
+
     Page {
         anchors.fill: parent
 
         header: PageHeader {
             id: header
             title: 'Pick Someone!'
+        }
+
+        Timer {
+            id: timer
+            interval: 1000
+            repeat: true
+
+            onTriggered: {
+                fullSeconds++;
+                if (fullSeconds == 10) {
+                    var currentlyPressed = []
+                    for (var i = 0; i < touchSurface.touchPoints.length; i++) {
+                        if (touchSurface.touchPoints[i].pressed) {
+                            currentlyPressed.push(i);
+                        }
+                    }
+
+                    selectedFinger = Math.floor(Math.random() * currentlyPressed.length);
+                }
+            }
         }
 
         MultiPointTouchArea {
@@ -25,6 +48,7 @@ MainView {
                 right: parent.right
                 bottom: parent.bottom
             }
+            id: touchSurface
 
             maximumTouchPoints: 5
             touchPoints: [
@@ -83,6 +107,17 @@ MainView {
                 y: point5.y - (height / 2)
                 color: 'purple'
                 visible: point5.pressed
+            }
+
+            onTouchUpdated: {
+                if (touchPoints.length > 0) {
+                    if (!timer.running) {
+                        timer.start();
+                    }
+                } else {
+                    fullSeconds = 0;
+                    timer.stop();
+                }
             }
         }
     }
