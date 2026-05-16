@@ -37,6 +37,7 @@ MainView {
                     }
 
                     selectedFinger = currentlyPressed[Math.floor(Math.random() * currentlyPressed.length)];
+                    selectedFingerIndicator.visible = true;
                 }
             }
         }
@@ -58,6 +59,21 @@ MainView {
                 TouchPoint {id: point4},
                 TouchPoint {id: point5}
             ]
+
+            Rectangle {
+                id: selectedFingerIndicator
+                width: units.gu(20)
+                height: width
+                radius: width/2
+                x: touchSurface.touchPoints[selectedFinger].x - (width / 2)
+                y: touchSurface.touchPoints[selectedFinger].y - (height / 2)
+                color: 'transparent'
+                border {
+                    color: 'green'
+                    width: units.gu(2)
+                }
+                visible: false
+            }
 
             Rectangle {
                 width: units.gu(13)
@@ -117,6 +133,7 @@ MainView {
                 } else {
                     fullSeconds = 0;
                     timer.stop();
+                    selectedFingerIndicator.visible = false;
                 }
             }
         }
