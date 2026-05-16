@@ -43,7 +43,7 @@ MainView {
                 x: point1.x - (width / 2)
                 y: point1.y - (height / 2)
                 color: 'green'
-                visible: false
+                visible: point1.pressed
             }
 
             Rectangle {
@@ -54,7 +54,7 @@ MainView {
                 x: point2.x - (width / 2)
                 y: point2.y - (height / 2)
                 color: 'yellow'
-                visible: false
+                visible: point2.pressed
             }
 
             Rectangle {
@@ -65,7 +65,7 @@ MainView {
                 x: point3.x - (width / 2)
                 y: point3.y - (height / 2)
                 color: 'red'
-                visible: false
+                visible: point3.pressed
             }
 
             Rectangle {
@@ -76,7 +76,7 @@ MainView {
                 x: point4.x - (width / 2)
                 y: point4.y - (height / 2)
                 color: 'blue'
-                visible: false
+                visible: point4.pressed
             }
 
             Rectangle {
@@ -87,18 +87,7 @@ MainView {
                 x: point5.x - (width / 2)
                 y: point5.y - (height / 2)
                 color: 'purple'
-                visible: false
-            }
-
-            onTouchUpdated: {
-                var pointLut = [rect1, rect2, rect3, rect4, rect5]
-                for (var i = 0; i < pointLut.length; i++) {
-                    if (i < touchPoints.length) {
-                        pointLut[i].visible = true;
-                    } else {
-                        pointLut[i].visible = false;
-                    }
-                }
+                visible: point5.pressed
             }
         }
     }
