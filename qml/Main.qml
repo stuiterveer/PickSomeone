@@ -39,6 +39,7 @@ MainView {
                     selectedFinger = currentlyPressed[Math.floor(Math.random() * currentlyPressed.length)];
                     selectedFingerIndicator.visible = true;
                     Haptics.play({duration: 250});
+                    timerText.visible = false;
                 }
             }
         }
@@ -130,13 +131,30 @@ MainView {
                 if (touchPoints.length > 1) {
                     if (!timer.running) {
                         timer.start();
+                        timerText.visible = true;
                     }
                 } else {
                     fullSeconds = 0;
                     timer.stop();
                     selectedFingerIndicator.visible = false;
+                    timerText.visible = false;
                 }
             }
+        }
+
+        Label {
+            anchors {
+                top: header.bottom
+                left: parent.left
+                right: parent.right
+                bottom: parent.bottom
+            }
+            id: timerText
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignVCenter
+            visible: false
+            font.pixelSize: root.width * 0.8
+            text: 5 - fullSeconds
         }
     }
 }
