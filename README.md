@@ -1,6 +1,6 @@
 # Pick Someone!
 
-If you can't decide who does something, this will do it for you
+Can't decide who needs to do something? Don't have any straws to draw? Rock-paper-scissors is too convoluted? Let this app Pick Someone!
 
 ## License
 
