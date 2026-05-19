@@ -38,6 +38,7 @@ MainView {
 
                     selectedFinger = currentlyPressed[Math.floor(Math.random() * currentlyPressed.length)];
                     selectedFingerIndicator.visible = true;
+                    Haptics.play({duration: 250});
                 }
             }
         }
